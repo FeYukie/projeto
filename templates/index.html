@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Projeto</h1>
+    <div class="container text-center">
+        <form action="/login" method="post" class="row justify-content-center">
+            <div class="col-6">
+                <div class="input-group">
+                        <label>Usuário: <input type="text" name="username"></label>
+                        <br><br>
+                        <label>Senha: <input type="password" name="senha"></label>
+                        <input type="submit" value="Enviar">
+                    <!--<input type="text" name="jogo" class="form-control" placeholder="Digite um jogo...">
+                    <button class="btn btn-secondary" type="submit" id="button-addon2">Enviar</button>-->
+                </div>
+            </div>
+        </form>
+<br><br>
+    {% with messages=get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+ <!--     <div class="row mt-3">
+            <table class="table table-bordered table-hover table-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="flex text-center">Código</th>
+                        <th scope="col" class="flex text-center">Jogo</th>
+                        <th scope="col" class="flex text-center">Tipo</th>
+                        <th scope="col" class="flex text-center">Ano</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for jogo in jogos %}
+                        <tr>
+                            <td>{{jogo.cod}}</td>
+                            <td>{{jogo.jogo}}</td>
+                            <td>{{jogo.tipo}}</td>
+                            <td>{{jogo.ano}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    -->  
+</body>
+</html>
