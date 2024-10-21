@@ -26,6 +26,11 @@ def login():
         </form>
     '''
     if
+        #salvar a lista dos produtos do carrinho nos cookies
+    #erros do login no flash messages
+    #cookies, middleware
+    #500,404,403
+    #link do repositorio
 @jogos.controller.route('/logout')
 def logout():
     session.pop('username',None)
