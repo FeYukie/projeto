@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Adicionar Jogo</h1>
+    <div class="form-section">
+        <form method="post" name="jogo">
+            <label for="codigo">Código:</label><p>{{ jogo.cod }}</p>
+            <br><br>
+            <label for="genero">Gênero:
+            <input type="text" id="genero" name="genero"></label>
+            <br><br>
+            <label for="nome">Nome:
+            <input type="text" id="nome" name="nome"></label>
+            <br><br>
+            <label for="ano">Ano:
+            <input type="number" id="ano" name="ano" min="1800" max="2100"></label>
+            <br><br>
+            <label for="preco">Preço:
+            <input type="number" id="preco" name="preco" min="0"></label>
+            <br><br>
+            <a class="btn-edit" href="{{ url_for('jogo.admin') }}">Adicionar<i class="+"></i></a>
+            <a class="btn-edit" href="{{ url_for('jogo.mudar', cod=jogo.cod) }}">Editar<i class="fas fa-pencil-alt"></i></a>
+            <a class="btn-delete" href="{{ url_for('jogo.limpar', cod=jogo.cod) }}">Excluir<i class="fas fa-trash-alt"></i></a>
+        </form>
+    </div>
+</body>
+
+</html>

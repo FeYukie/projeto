@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Loja de Jogos</h1>
+    <div class="container text-center">
+        {% if 'username' in session %}
+            <p>Olá, {{ session['username'] }}!</p>
+            <br>
+            <h2>Carrinho</h2>
+            <br><br>
+            <ul>
+                {% for jogo in carrinho_jogos %}
+                    <li>{{ jogo.nome }} - {{ jogo.preco }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Sem login!</p>
+        {% endif %}
+        <br><br>
+        <div class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Gênero</th>
+                        <th>Nome</th>
+                        <th>Ano</th>
+                        <th>Preço</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="itemList">
+                    {% for jogo in jogos %}
+                        <tr>
+                            <td>{{ jogo.cod }}</td>
+                            <td>{{ jogo.genero }}</td>
+                            <td>{{ jogo.nome }}</td>
+                            <td>{{ jogo.ano }}</td>
+                            <td>{{ jogo.preco }}</td>
+                            <div class="actions">
+                                <td><a href="{{ url_for('jogo.adicionar_ao_carrinho', cod=jogo.cod) }}" class="btn-comp">Comprar</a>
+                            </td></div>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

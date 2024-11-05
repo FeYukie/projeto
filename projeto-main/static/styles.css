@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    background-color: rgb(194, 185, 231);
+}
+
+h1,h2 {
+    color: rgb(64, 3, 140);
+    margin-top: 50px;
+    font: 'Krona One';
+    text-align: center;
+}
+
+p {
+    margin-left: 30px;
+    width: 30%;
+}
+ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(194, 185, 231);
+    text-align: center;
+}
+
+th {
+    background: #192becc1;
+    color: white;
+}
+td{
+    background-color: white;
+}
+
+.btn {
+    background-color: aquamarine;
+}
+
+.btn:hover {
+    background-color: rgb(92, 217, 175);
+    color: black(11, 11, 11);
+}
+
+label {
+    font-weight: bold;
+    display: block; 
+    text-align: left;
+    margin-left:50px;
+}
+
+form {
+    border-radius: 4px;
+    display: block;
+    margin-top: 30px;
+    overflow: hidden;
+    max-width: 100%;
+    text-align: left;
+}
+
+.btn-edit, .btn-delete, .btn-add, .btn-comp {
+    background: #5e6460;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: left;
+    margin-right:100px;
+    margin-left: 13%;
+}
+
+.btn-delete i {
+    color: #ef4444;
+    font-size: 15px;
+}
+
+.btn-edit, .btn-delete, .btn-add:hover, .btn-comp {
+    background-color: #4a4e4c;
+}
+
+input {
+    flex: 0;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    text-align: left;
+    max-width: 100%;
+    border-radius: 4px;
+    padding: 8px;
+    margin-left:15px;
+}
+
+input[type="submit"] {
+    background: #5e6460;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-left: 150px;
+    margin-right: auto;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #4a4e4c;
+    color: #fff;
+}
+#bot{
+    border:0;
+}
+table {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-size: 15px;
+    background-color: white;
+}
+
+table th,
+table td {
+    padding: 5px;
+    border: 1px solid #000000;
+    text-align: center;
+}
