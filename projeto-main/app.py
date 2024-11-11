@@ -47,17 +47,16 @@ def internal_error(e):
 @verifica_login
 def admin():
     if request.method=='POST':
-        tipo = request.form.get('tipo')
+        genero = request.form.get('genero')
         nome = request.form.get('nome')
         ano = request.form.get('ano')
         preco = request.form.get('preco')
         if 'username' in session:
             for user in users:
                 if user.tipo=='Admin':
-                    add_jogo(tipo, nome, ano, preco)
+                    add_jogo(genero, nome, ano, preco)
                     flash(f"Boas-vindas, {user.tipo}!", "success")
-                    return redirect(url_for('jogo.admin'))
-                    
+                    return redirect(url_for('jogo.admin'))        
                 else:
                     flash("Acesso negado!","error")
                     return redirect(url_for("jogo.index"))
